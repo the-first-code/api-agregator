@@ -156,3 +156,6 @@ docker system prune     # Очистит неиспользуемые ресур
 ```
 
 ## Developer
+
+Ник - Maxim96
+Имя - Максим
