@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class StatusController extends Controller
 {
     public function index() {
-    	$currentDatetime = new DateTime();    
+    	$currentDatetime = new \DateTime();    
 		$iso8601 = $currentDatetime->format('c');
 
     	return response()->json([
