@@ -9,8 +9,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('auth/register', [ AuthController::class, 'register' ]);
+Route::prefix('/auth')->group(function () {
 
-Route::post('auth/token', [ AuthController::class, 'newToken' ]);
+    Route::post('/register', [ AuthController::class, 'register' ]);
+    
+    Route::post('/token', [ AuthController::class, 'newToken' ]);
+
+});
 
 Route:: get('status', [ StatusController::class, 'index' ]);
