@@ -13,7 +13,9 @@ class WeatherController extends Controller
     {
         $city = $corRequest->validated(['city']);
         try {
-            WeatherApiService::getWeatherByCity($city, []);
+            $weather = WeatherApiService::getWeatherByCity($city, []);
+
+            return $weather;
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], 500);
         }
@@ -25,7 +27,9 @@ class WeatherController extends Controller
         $longitude = $corRequest->validated(['longitude']);
 
         try {
-            WeatherApiService::getWeatherByCoordinates($latitude, $longitude, []);
+            $weather = WeatherApiService::getWeatherByCoordinates($latitude, $longitude, []);
+
+            return $weather;
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], 500);
         }
