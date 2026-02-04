@@ -154,8 +154,3 @@ docker compose exec app chown -R www-data:www-data /var/www/html
 docker compose down -v  # Удалит контейнеры и volumes
 docker system prune     # Очистит неиспользуемые ресурсы
 ```
-
-## Developer
-
-Ник - Maxim96
-Имя - Максим
